@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of genetic is to …
+You can compute genetic diversity about SNPs in HMP format.
 
 ## Installation
 
