@@ -1,0 +1,17 @@
+Package: genetic
+Title: genetic deversity
+Version: 0.0.0.9001
+Authors@R: 
+    person(given = "Qingsong",
+           family = "Li",
+           role = c("aut", "cre"),
+           email = "329844894@qq.com")
+Description: about genetic deversity.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports: 
+    genetics,
+    LDheatmap
