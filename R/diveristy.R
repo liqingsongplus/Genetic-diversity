@@ -9,7 +9,6 @@
 #'
 #' @examples data("E5b_hmp")
 #' diveristy(E5b_hmp)
-
 diveristy <- function(data) {
   A1 <- data[, -c(1:11)]
   B <- NULL
@@ -18,13 +17,15 @@ diveristy <- function(data) {
     AA1 <- table(t(A1[n, ]))
     AA <- AA1[rownames(AA1) != "NN"]
     CC <- rbind(number = AA, frequency = AA / sum(AA))
-    CC1 <- cbind.data.frame(Genotype = colnames(CC),
-                            frequency = round(CC[2, ], 4),
-                            number = CC[1, ])
+    CC1 <- cbind.data.frame(
+      Genotype = colnames(CC),
+      frequency = round(CC[2, ], 4),
+      number = CC[1, ]
+    )
     B <- rbind(B, CC1)
     for (i in 1:nrow(AA)) {
       if (strsplit(rownames(AA), "")[[i]][1] !=
-          strsplit(rownames(AA), "")[[i]][2]) {
+        strsplit(rownames(AA), "")[[i]][2]) {
         C <- sum(AA[[i]])
       } else {
         D1 <- max(AA[[i]])
@@ -36,9 +37,11 @@ diveristy <- function(data) {
     Ho <- C / sum(AA)
     He <- MAF * (1 - MAF) * 2
     PIC <- 1 - MAF^2 - (1 - MAF)^2 - 2 * (MAF^2) * ((1 - MAF)^2)
-    out <- rbind.data.frame(out, c(data[n, 1], data[n, 4], data[n, 2],
-                                   round(Ho, 4), round(He, 4), round(PIC, 4),
-                                   round(MAF, 4)))
+    out <- rbind.data.frame(out, c(
+      data[n, 1], data[n, 4], data[n, 2],
+      round(Ho, 4), round(He, 4), round(PIC, 4),
+      round(MAF, 4)
+    ))
     if (nrow(AA) == 2) {
       out <- rbind(out, NA)
     } else if (nrow(AA) == 3) {

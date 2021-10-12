@@ -10,10 +10,9 @@
 #' @export
 #'
 #' @examples
-#' library(genetic)  # 加载包
-#' data("E5b_hmp") #读取数据
+#' library(genetic) # 加载包
+#' data("E5b_hmp") # 读取数据
 #' ld_plot(E5b_hmp, E5b_hmp$pos) # 在当前文件夹下生成LDheatmap.pdf
-
 ld_plot <- function(data, pos) {
   row.names(data) <- pos
   snpdata <- as.data.frame(t(data[, -c(1:11)]))

@@ -20,7 +20,7 @@ ld_plot() is used to produce a graphical display, as a heat map, of pairwise
 linkage disequilibrium (LD) measurements for SNPs.
 }
 \examples{
-library(genetic)  # 加载包
-data("E5b_hmp") #读取数据
+library(genetic) # 加载包
+data("E5b_hmp") # 读取数据
 ld_plot(E5b_hmp, E5b_hmp$pos) # 在当前文件夹下生成LDheatmap.pdf
 }

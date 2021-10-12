@@ -14,6 +14,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
     genetics,
-    LDheatmap
+    LDheatmap,
+    magrittr,
+    stringr
 Depends: 
     R (>= 2.10)
